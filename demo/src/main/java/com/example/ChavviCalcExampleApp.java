@@ -1,4 +1,4 @@
-package com.chavviCalcExample;
+package com.example;
 
 import java.util.*;
 
