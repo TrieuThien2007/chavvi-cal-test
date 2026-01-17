@@ -103,9 +103,14 @@ public class ChavviCalcExampleApp {
           scan.nextLine();
         }
         break;
+
       case '+':
         valueA = valueA + valueB;
         System.out.printf("Result: %.3f\n", valueA + valueB);
+        break;
+      case '-':
+        valueA = valueA - valueB;
+        System.out.printf("Result: %.3f\n", valueA - valueB);
         break;
     }
 
