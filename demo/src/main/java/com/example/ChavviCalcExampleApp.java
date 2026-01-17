@@ -81,7 +81,18 @@ public class ChavviCalcExampleApp {
       default:
         System.out.println("ERROR: Unknown commmand");
         success = false;
+        case 'a':
+        System.out.print("Enter value for A: ");
+        if(scan.hasNextDouble()) {
+          valueA = scan.nextDouble();
+          scan.nextLine();
+        } else {
+          System.out.println("ERROR: Invalid number");
+          scan.nextLine(); 
+        }
+        break;
     }
+
 
     return success;
   }
