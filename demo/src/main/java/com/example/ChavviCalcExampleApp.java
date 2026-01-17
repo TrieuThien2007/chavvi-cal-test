@@ -81,6 +81,7 @@ public class ChavviCalcExampleApp {
       default:
         System.out.println("ERROR: Unknown commmand");
         success = false;
+
       case 'a':
         System.out.print("Enter value for A: ");
         if (scan.hasNextDouble()) {
@@ -91,6 +92,7 @@ public class ChavviCalcExampleApp {
           scan.nextLine();
         }
         break;
+
         case 'b':
         System.out.print("Enter value for B: ");
         if (scan.hasNextDouble()) {
@@ -100,6 +102,9 @@ public class ChavviCalcExampleApp {
           System.out.println("ERROR: Invalid number");
           scan.nextLine();
         }
+        break;
+      case '+':
+        System.out.printf("Result: %.3f\n", valueA + valueB);
         break;
     }
 
