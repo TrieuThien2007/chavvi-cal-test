@@ -93,7 +93,7 @@ public class ChavviCalcExampleApp {
         }
         break;
 
-        case 'b':
+      case 'b':
         System.out.print("Enter value for B: ");
         if (scan.hasNextDouble()) {
           valueB = scan.nextDouble();
@@ -121,7 +121,7 @@ public class ChavviCalcExampleApp {
       case '/':
         if (valueB == 0) {
           System.out.println("ERROR: Division by zero");
-          success= false;
+          success = false;
         } else {
           valueA = valueA / valueB;
           System.out.printf("Result: %.3f\n", valueA / valueB);
