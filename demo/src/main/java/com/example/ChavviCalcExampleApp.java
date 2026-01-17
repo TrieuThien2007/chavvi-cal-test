@@ -118,7 +118,7 @@ public class ChavviCalcExampleApp {
         System.out.printf("Result: %.3f\n", valueA * valueB);
         break;
 
-              case '/':
+      case '/':
         if (valueB == 0) {
           System.out.println("ERROR: Division by zero");
           success= false;
@@ -126,6 +126,11 @@ public class ChavviCalcExampleApp {
           valueA = valueA / valueB;
           System.out.printf("Result: %.3f\n", valueA / valueB);
         }
+        break;
+
+      case 'c':
+        valueA = 0.0;
+        valueB = 0.0;
         break;
     }
 
