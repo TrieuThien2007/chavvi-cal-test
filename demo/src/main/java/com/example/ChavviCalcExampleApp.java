@@ -6,8 +6,8 @@ import java.util.*;
  * chavvi calc calculator
  */
 public class ChavviCalcExampleApp {
-  private static double valueA = 0.0;
-  private static double valueB = 0.0;
+  private static float valueA = 0.0f;
+  private static float valueB = 0.0f;
 
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
