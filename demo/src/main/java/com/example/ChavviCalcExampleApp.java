@@ -69,6 +69,16 @@ public class ChavviCalcExampleApp {
 
     return command;
   }
+  //read float value from user input
+  private static Float readFloat(Scanner scan) {
+  try {
+    return Float.parseFloat(scan.nextLine().trim());
+  } catch (Exception e) {
+    System.out.println("ERROR: Invalid number");
+    return null;
+  }
+}
+
 
   // calculator functions
   private static Boolean executeCommand(Scanner scan, Character command) {
@@ -84,24 +94,13 @@ public class ChavviCalcExampleApp {
 
       case 'a':
         System.out.print("Enter value for A: ");
-        if (scan.hasNextDouble()) {
-          valueA = scan.nextDouble();
-          scan.nextLine();
-        } else {
-          System.out.println("ERROR: Invalid number");
-          scan.nextLine();
-        }
+        
+        
         break;
 
       case 'b':
         System.out.print("Enter value for B: ");
-        if (scan.hasNextDouble()) {
-          valueB = scan.nextDouble();
-          scan.nextLine();
-        } else {
-          System.out.println("ERROR: Invalid number");
-          scan.nextLine();
-        }
+       
         break;
 
       case '+':
@@ -129,8 +128,8 @@ public class ChavviCalcExampleApp {
         break;
 
       case 'c':
-        valueA = 0.0;
-        valueB = 0.0;
+        valueA = 0.0f;
+        valueB = 0.0f;
         break;
     }
 
