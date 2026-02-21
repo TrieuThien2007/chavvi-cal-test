@@ -6,8 +6,8 @@ import java.util.*;
  * chavvi calc calculator
  */
 public class ChavviCalcExampleApp {
-  private static float valueA = 0.0f;
-  private static float valueB = 0.0f;
+  private static Float valueA = 0.0f;
+  private static Float valueB = 0.0f;
 
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
@@ -94,13 +94,16 @@ public class ChavviCalcExampleApp {
 
       case 'a':
         System.out.print("Enter value for A: ");
-        
-        
+        if ((valueA = readFloat(scan)) == null) {
+          success = false;
+        }
         break;
 
       case 'b':
         System.out.print("Enter value for B: ");
-       
+        if ((valueB = readFloat(scan)) == null) {
+          success = false;
+        }
         break;
 
       case '+':
