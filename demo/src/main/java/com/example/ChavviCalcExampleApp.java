@@ -125,7 +125,7 @@ public class ChavviCalcExampleApp {
   private static Float readFloat(Scanner scan) {
     try {
       return Float.parseFloat(scan.nextLine().trim());
-    } catch (Exception e) {
+    } catch (NumberFormatException e) {
       System.out.println("ERROR: Invalid number");
       return null;
     }
