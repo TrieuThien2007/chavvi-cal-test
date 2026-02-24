@@ -70,6 +70,11 @@ public class ChavviCalcExampleApp {
   valueB = tmp;
   return true;
 }
+private static Boolean doAdd() {
+  valueA = valueA + valueB;               
+  System.out.printf("Result: %.3f\n", valueA);
+  return true;
+}
   // get first character from input
   private static Character menuGetCommand(Scanner scan) {
     Character command = '_';
