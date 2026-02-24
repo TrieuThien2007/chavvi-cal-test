@@ -85,7 +85,15 @@ private static Boolean doMultiply() {
   System.out.printf("Result: %.3f\n", valueA);
   return true;
 }
-
+private static Boolean doDivide() {
+  if (Math.abs(valueB) < 0.000001f) {      
+    System.out.println("ERROR: Division by zero");
+    return false;
+  }
+  valueA = valueA / valueB;                
+  System.out.printf("Result: %.3f\n", valueA);
+  return true;
+}
   // get first character from input
   private static Character menuGetCommand(Scanner scan) {
     Character command = '_';
@@ -142,13 +150,7 @@ private static Boolean doMultiply() {
         break;
 
       case '/':
-        if (valueB == 0) {
-          System.out.println("ERROR: Division by zero");
-          success = false;
-        } else {
-          valueA = valueA / valueB;
-          System.out.printf("Result: %.3f\n", valueA / valueB);
-        }
+        success = doDivide();
         break;
 
       case 'c':
