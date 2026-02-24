@@ -120,8 +120,7 @@ private static Boolean doAdd() {
         break;
 
       case '+':
-        valueA = valueA + valueB;
-        System.out.printf("Result: %.3f\n", valueA + valueB);
+       success = doAdd();
         break;
       case '-':
         valueA = valueA - valueB;
