@@ -56,6 +56,14 @@ public class ChavviCalcExampleApp {
     printMenuLine();
   }
 
+  private static Boolean doSetA(Scanner scan) {
+  System.out.print("Enter value for A: ");
+  Float tmp = readFloat(scan);
+  if (tmp == null) return false;
+  valueA = tmp;
+  return true;
+}
+
   // get first character from input
   private static Character menuGetCommand(Scanner scan) {
     Character command = '_';
