@@ -6,8 +6,8 @@ import java.util.*;
  * chavvi calc calculator
  */
 public class ChavviCalcExampleApp {
-  private static Float valueA = 0.0f;
-  private static Float valueB = 0.0f;
+  private static float valueA = 0.0f;
+  private static float valueB = 0.0f;
 
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
@@ -57,48 +57,57 @@ public class ChavviCalcExampleApp {
   }
 
   private static Boolean doSetA(Scanner scan) {
-  System.out.print("Enter value for A: ");
-  Float tmp = readFloat(scan);
-  if (tmp == null) return false;
-  valueA = tmp;
-  return true;
-}
-  private static Boolean doSetB(Scanner scan) {
-  System.out.print("Enter value for B: ");
-  Float tmp = readFloat(scan);
-  if (tmp == null) return false;
-  valueB = tmp;
-  return true;
-}
-private static Boolean doAdd() {
-  valueA = valueA + valueB;               
-  System.out.printf("Result: %.3f\n", valueA);
-  return true;
-}
-private static Boolean doSubtract() {
-  valueA = valueA - valueB;                
-  System.out.printf("Result: %.3f\n", valueA);
-  return true;
-}
-private static Boolean doMultiply() {
-  valueA = valueA * valueB;              
-  System.out.printf("Result: %.3f\n", valueA);
-  return true;
-}
-private static Boolean doDivide() {
-  if (Math.abs(valueB) < 0.000001f) {      
-    System.out.println("ERROR: Division by zero");
-    return false;
+    System.out.print("Enter value for A: ");
+    Float tmp = readFloat(scan);
+    if (tmp == null)
+      return false;
+    valueA = tmp;
+    return true;
   }
-  valueA = valueA / valueB;                
-  System.out.printf("Result: %.3f\n", valueA);
-  return true;
-}
-private static Boolean doClear() {
-  valueA = 0.0f;
-  valueB = 0.0f;
-  return true;
-}
+
+  private static Boolean doSetB(Scanner scan) {
+    System.out.print("Enter value for B: ");
+    Float tmp = readFloat(scan);
+    if (tmp == null)
+      return false;
+    valueB = tmp;
+    return true;
+  }
+
+  private static Boolean doAdd() {
+    valueA = valueA + valueB;
+    System.out.printf("Result: %.3f\n", valueA);
+    return true;
+  }
+
+  private static Boolean doSubtract() {
+    valueA = valueA - valueB;
+    System.out.printf("Result: %.3f\n", valueA);
+    return true;
+  }
+
+  private static Boolean doMultiply() {
+    valueA = valueA * valueB;
+    System.out.printf("Result: %.3f\n", valueA);
+    return true;
+  }
+
+  private static Boolean doDivide() {
+    if (Math.abs(valueB) < 0.000001f) {
+      System.out.println("ERROR: Division by zero");
+      return false;
+    }
+    valueA = valueA / valueB;
+    System.out.printf("Result: %.3f\n", valueA);
+    return true;
+  }
+
+  private static Boolean doClear() {
+    valueA = 0.0f;
+    valueB = 0.0f;
+    return true;
+  }
+
   // get first character from input
   private static Character menuGetCommand(Scanner scan) {
     Character command = '_';
@@ -109,19 +118,18 @@ private static Boolean doClear() {
       rawInput = rawInput.toLowerCase();
       command = rawInput.charAt(0);
     }
-
     return command;
   }
-  //read float value from user input
-  private static Float readFloat(Scanner scan) {
-  try {
-    return Float.parseFloat(scan.nextLine().trim());
-  } catch (Exception e) {
-    System.out.println("ERROR: Invalid number");
-    return null;
-  }
-}
 
+  // read float value from user input
+  private static Float readFloat(Scanner scan) {
+    try {
+      return Float.parseFloat(scan.nextLine().trim());
+    } catch (Exception e) {
+      System.out.println("ERROR: Invalid number");
+      return null;
+    }
+  }
 
   // calculator functions
   private static Boolean executeCommand(Scanner scan, Character command) {
@@ -134,9 +142,10 @@ private static Boolean doClear() {
       default:
         System.out.println("ERROR: Unknown commmand");
         success = false;
+        break;
 
       case 'a':
-       success = doSetA(scan);
+        success = doSetA(scan);
         break;
 
       case 'b':
@@ -144,7 +153,7 @@ private static Boolean doClear() {
         break;
 
       case '+':
-       success = doAdd();
+        success = doAdd();
         break;
       case '-':
         success = doSubtract();
