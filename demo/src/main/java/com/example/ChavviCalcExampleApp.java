@@ -111,10 +111,7 @@ public class ChavviCalcExampleApp {
         break;
 
       case 'b':
-        System.out.print("Enter value for B: ");
-        if ((valueB = readFloat(scan)) == null) {
-          success = false;
-        }
+        success = doSetB(scan);
         break;
 
       case '+':
