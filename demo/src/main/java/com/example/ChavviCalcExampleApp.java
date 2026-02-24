@@ -94,6 +94,11 @@ private static Boolean doDivide() {
   System.out.printf("Result: %.3f\n", valueA);
   return true;
 }
+private static Boolean doClear() {
+  valueA = 0.0f;
+  valueB = 0.0f;
+  return true;
+}
   // get first character from input
   private static Character menuGetCommand(Scanner scan) {
     Character command = '_';
@@ -154,8 +159,7 @@ private static Boolean doDivide() {
         break;
 
       case 'c':
-        valueA = 0.0f;
-        valueB = 0.0f;
+        success = doClear();
         break;
     }
 
