@@ -80,20 +80,11 @@ private static Boolean doSubtract() {
   System.out.printf("Result: %.3f\n", valueA);
   return true;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+private static Boolean doMultiply() {
+  valueA = valueA * valueB;              
+  System.out.printf("Result: %.3f\n", valueA);
+  return true;
+}
 
   // get first character from input
   private static Character menuGetCommand(Scanner scan) {
@@ -147,8 +138,7 @@ private static Boolean doSubtract() {
         break;
 
       case '*':
-        valueA = valueA * valueB;
-        System.out.printf("Result: %.3f\n", valueA * valueB);
+        success = doMultiply();
         break;
 
       case '/':
